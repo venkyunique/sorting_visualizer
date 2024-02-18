@@ -102,82 +102,82 @@ void menu() {
 	}
 }
 void visualize(vector<int> v) {
-	for(int i=0;i<v.size();i++){
-		cout << v[i] << " ";
+	// for(int i=0;i<v.size();i++){
+	// 	cout << v[i] << " ";
+	// }
+// }
+cout << v.size() << endl;
+	int arr[v.size()/20][20];
+	int in=0;
+	for(int i=0; i<v.size()/20; i++) {
+		for(int j=0; j<20; j++) {
+			arr[i][j]=v[in];
+			in++;
+		}
+	}
+	for(int i=0; i<v.size()/20; i++) {
+		for(int j=0; j<20; j++) {
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+	}
+// ------------------------------------------print the graphs------------------
+	cout << endl;
+	cout << endl;
+	for(int i =0;i<20;i++)
+	cout << arr[19][i] << " ";
+	lineS(27,25,80);
+	for(int i=28;i<=107;i=i+4){
+		for(int j=0;j<arr[10][i-28];j++){
+			gotoxy(i,24-j);
+			printf("*");
+			gotoxy(i,26);
+			cout << arr[10][i-28];
+		}
 	}
 }
-//	cout << v.size() << endl;
-//	int arr[v.size()/20][20];
-//	int in=0;
-//	for(int i=0; i<v.size()/20; i++) {
-//		for(int j=0; j<20; j++) {
-//			arr[i][j]=v[in];
-//			in++;
-//		}
-//	}
-//	for(int i=0; i<v.size()/20; i++) {
-//		for(int j=0; j<20; j++) {
-//			cout << arr[i][j] << " ";
-//		}
-//		cout << endl;
-//	}
-// ------------------------------------------print the graphs------------------
-//	cout << endl;
-//	cout << endl;
-//	for(int i =0;i<20;i++)
-//	cout << arr[19][i] << " ";
-//	lineS(27,25,80);
-//	for(int i=28;i<=107;i=i+4){
-//		for(int j=0;j<arr[10][i-28];j++){
-//			gotoxy(i,24-j);
-//			printf("*");
-//			gotoxy(i,26);
-//			cout << arr[10][i-28];
-//		}
-//	}
-//}
 //---------------------------------------------------------------------------
-//void visualize(vector<int> v){
-	// bax center (x = 67)
-//	boxDD(125,27,5,2);	// main box
-//	lineS(27,25,80);
-//	int y=24;
-//	for(int i=28;i<=107;i=i+4){
-//		for(int j=0;j<v[i-28];j++){
-//			gotoxy(i,y-j);
-//			printf("*");
-//			gotoxy(i,26);
-//			cout << v[i-28];
-//		}
+void visualize(vector<int> v){
+	bax center (x = 67)
+	boxDD(125,27,5,2);	// main box
+	lineS(27,25,80);
+	int y=24;
+	for(int i=28;i<=107;i=i+4){
+		for(int j=0;j<v[i-28];j++){
+			gotoxy(i,y-j);
+			printf("*");
+			gotoxy(i,26);
+			cout << v[i-28];
+		}
+	}
+	sleep(1);
+	int row=(v.size())/20;
+	int arr[row][20];
+	int p=0;
+	// adjust vector to 2d array;
+	for(int i=0;i<row;i++){
+		for(int j=0;j<20;j++){
+			arr[i][j]=v[p];
+			p++;
+		}
+	}
+//	for(int i=0;i<v.size();i++){
+//		cout << v[i] << " ";
 //	}
-//	sleep(1);
-//	int row=(v.size())/20;
-//	int arr[row][20];
-//	int p=0;
-//	// adjust vector to 2d array;
-//	for(int i=0;i<row;i++){
-//		for(int j=0;j<20;j++){
-//			arr[i][j]=v[p];
-//			p++;
-//		}
-//	}
-////	for(int i=0;i<v.size();i++){
-////		cout << v[i] << " ";
-////	}
-//	for(int d=0;d<row;d++){
-//		for(int i=28;i<=107;i=i+4){
-//			for(int j=0;j<arr[d][i-28];j++){
-//				gotoxy(i,y-j);
-//				printf("*");
-//				gotoxy(i,26);
-//				cout << arr[d][i-28];
-//			}
-//		}
-//		sleep(1);
-//		clear_graph();
-//	}
-//	getch();
-//}
+	for(int d=0;d<row;d++){
+		for(int i=28;i<=107;i=i+4){
+			for(int j=0;j<arr[d][i-28];j++){
+				gotoxy(i,y-j);
+				printf("*");
+				gotoxy(i,26);
+				cout << arr[d][i-28];
+			}
+		}
+		sleep(1);
+		clear_graph();
+	}
+	getch();
+}
 //----------------------------------------------------------------------------
 void clear_graph() {
 	gotoxy(27,5);
